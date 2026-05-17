@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded',()=>{
 
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');if(id==='#')return;
+    const t=document.querySelector(id);if(!t)return;
+    e.preventDefault();
+    const o=document.getElementById('nav').offsetHeight+16;
+    const top=t.getBoundingClientRect().top+window.scrollY-o;
+    window.scrollTo({top,behavior:'smooth'});
+  });
+});
+
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80));
 
