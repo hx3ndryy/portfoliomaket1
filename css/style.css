@@ -350,6 +350,25 @@ img{max-width:100%;display:block}
 .footer p{color:var(--text-dim);font-size:.72rem}
 .footer-div{width:24px;height:1px;background:var(--gold-dark);margin:.5rem auto}
 
+.progress-bar{
+  position:fixed;top:0;left:0;right:0;z-index:2001;height:2px;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));
+  transform-origin:0 50%;transform:scaleX(0);transition:transform .1s linear;
+  will-change:transform;
+}
+.back-top{
+  position:fixed;bottom:2rem;right:2rem;z-index:999;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--gold);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:translateY(12px);
+  transition:all .4s;box-shadow:0 4px 20px rgba(255,211,83,.25);
+}
+.back-top.visible{opacity:1;pointer-events:all;transform:translateY(0)}
+.back-top:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(255,211,83,.35)}
+.back-top svg{width:20px;height:20px;stroke:#0c0806;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.stat-plus{font-family:var(--font-display);font-size:1.6rem;background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;vertical-align:super}
+
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.22,1,.36,1);will-change:transform,opacity}
 .reveal.show{opacity:1;transform:translateY(0);will-change:unset}
 
